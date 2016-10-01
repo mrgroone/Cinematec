@@ -1,0 +1,155 @@
+package gui;
+
+import java.awt.EventQueue;
+
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.JPasswordField;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.UIManager;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class MantenimientoSalas extends JDialog implements ActionListener {
+	private JLabel lblCodigoSala;
+	private JLabel lblNumeroFilas;
+	private JTextField txtNumeroFilas;
+	private JTextField txtCodigoSala;
+	private JComboBox cboOpciones;
+	private JButton btnGrabar;
+	private JButton btnListado;
+	private JButton btnCerrar;
+	private JLabel lblNumeroButacas;
+	private JTextField txtNumeroButacas;
+	private JLabel lblCodigoCine;
+	private JTextField txtCodigoCine;
+	private JLabel lblNumeroDeSala;
+	private JTextField txtNumeroSala;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MantenimientoSalas dialog = new MantenimientoSalas();
+					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					dialog.setVisible(true);
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public MantenimientoSalas() {
+		setTitle("Mantenimiento - Cines");
+		setBounds(100, 100, 450, 175);
+		getContentPane().setLayout(null);
+		
+		lblCodigoSala = new JLabel("Codigo Sala");
+		lblCodigoSala.setBounds(10, 11, 56, 14);
+		getContentPane().add(lblCodigoSala);
+		
+		lblNumeroFilas = new JLabel("N\u00FAmero de Filas");
+		lblNumeroFilas.setBounds(10, 86, 80, 14);
+		getContentPane().add(lblNumeroFilas);
+		
+		txtNumeroFilas = new JTextField();
+		txtNumeroFilas.setBounds(170, 83, 91, 20);
+		getContentPane().add(txtNumeroFilas);
+		txtNumeroFilas.setColumns(10);
+		
+		txtCodigoSala = new JTextField();
+		txtCodigoSala.setEditable(false);
+		txtCodigoSala.setBounds(170, 8, 91, 20);
+		getContentPane().add(txtCodigoSala);
+		txtCodigoSala.setColumns(10);
+		
+		cboOpciones = new JComboBox();
+		cboOpciones.setModel(new DefaultComboBoxModel(new String[] {"Ingreso", "Modificaci\u00F3n", "Eliminaci\u00F3n"}));
+		cboOpciones.setBounds(335, 8, 89, 20);
+		getContentPane().add(cboOpciones);
+		
+		btnGrabar = new JButton("Grabar");
+		btnGrabar.addActionListener(this);
+		btnGrabar.setBounds(335, 32, 89, 23);
+		getContentPane().add(btnGrabar);
+		
+		btnListado = new JButton("Listado");
+		btnListado.addActionListener(this);
+		btnListado.setBounds(335, 57, 89, 23);
+		getContentPane().add(btnListado);
+		
+		btnCerrar = new JButton("Cerrar");
+		btnCerrar.addActionListener(this);
+		btnCerrar.setBounds(335, 82, 89, 23);
+		getContentPane().add(btnCerrar);
+		
+		lblNumeroButacas = new JLabel("N\u00FAmero de Butacas");
+		lblNumeroButacas.setBounds(10, 111, 93, 14);
+		getContentPane().add(lblNumeroButacas);
+		
+		txtNumeroButacas = new JTextField();
+		txtNumeroButacas.setBounds(170, 108, 91, 20);
+		getContentPane().add(txtNumeroButacas);
+		txtNumeroButacas.setColumns(10);
+		
+		lblCodigoCine = new JLabel("Codigo Cine");
+		lblCodigoCine.setBounds(10, 36, 57, 14);
+		getContentPane().add(lblCodigoCine);
+		
+		txtCodigoCine = new JTextField();
+		txtCodigoCine.setEditable(false);
+		txtCodigoCine.setBounds(170, 33, 91, 20);
+		getContentPane().add(txtCodigoCine);
+		txtCodigoCine.setColumns(10);
+		
+		lblNumeroDeSala = new JLabel("N\u00FAmero de Sala");
+		lblNumeroDeSala.setBounds(10, 61, 75, 14);
+		getContentPane().add(lblNumeroDeSala);
+		
+		txtNumeroSala = new JTextField();
+		txtNumeroSala.setBounds(170, 58, 91, 20);
+		getContentPane().add(txtNumeroSala);
+		txtNumeroSala.setColumns(10);
+
+	}
+	public void actionPerformed(ActionEvent arg0) {
+		if (arg0.getSource() == btnGrabar) {
+			actionPerformedBtnGrabar(arg0);
+		}
+		if (arg0.getSource() == btnListado) {
+			actionPerformedBtnListado(arg0);
+		}
+		if (arg0.getSource() == btnCerrar) {
+			actionPerformedBtnCerrar(arg0);
+		}
+	}
+	protected void actionPerformedBtnCerrar(ActionEvent arg0) {
+		dispose();
+	}
+	protected void actionPerformedBtnListado(ActionEvent arg0) {
+		ListadoCines x = new ListadoCines();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+	protected void actionPerformedBtnGrabar(ActionEvent arg0) {
+		String s = "¿Esta seguro de Grabar?";
+		JOptionPane.showConfirmDialog(this, s);
+	}
+}

@@ -85,7 +85,6 @@ public class Menu extends JFrame implements ActionListener {
 		mnMantenimiento.add(mntmPeliculas);
 		
 		mntmFunciones = new JMenuItem("Funciones");
-		mntmFunciones.addActionListener(this);
 		mnMantenimiento.add(mntmFunciones);
 		
 		mnRegistroDeReserva = new JMenu("Registro de Reserva");
@@ -102,9 +101,6 @@ public class Menu extends JFrame implements ActionListener {
 		contentPane.setLayout(null);
 	}
 	public void actionPerformed(ActionEvent arg0) {
-		if (arg0.getSource() == mntmFunciones) {
-			actionPerformedMntmFunciones(arg0);
-		}
 		if (arg0.getSource() == mntmPeliculas) {
 			actionPerformedMntmPeliculas(arg0);
 		}
@@ -143,11 +139,6 @@ public class Menu extends JFrame implements ActionListener {
 	}
 	protected void actionPerformedMntmPeliculas(ActionEvent arg0) {
 		MantenimientoPeliculas x = new MantenimientoPeliculas();
-		x.setLocationRelativeTo(this);
-		x.setVisible(true);
-	}
-	protected void actionPerformedMntmFunciones(ActionEvent arg0) {
-		MantenimientoFunciones x = new MantenimientoFunciones();
 		x.setLocationRelativeTo(this);
 		x.setVisible(true);
 	}

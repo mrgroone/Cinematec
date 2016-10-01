@@ -10,10 +10,8 @@ import javax.swing.UIManager;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
-public class Menu extends JFrame implements ActionListener {
+public class Menu extends JFrame {
 
 	private JPanel contentPane;
 	private JMenuBar menuBar;
@@ -65,27 +63,21 @@ public class Menu extends JFrame implements ActionListener {
 		menuBar.add(mnMantenimiento);
 		
 		mntmEmpleados = new JMenuItem("Empleados");
-		mntmEmpleados.addActionListener(this);
 		mnMantenimiento.add(mntmEmpleados);
 		
 		mntmClientes = new JMenuItem("Clientes");
-		mntmClientes.addActionListener(this);
 		mnMantenimiento.add(mntmClientes);
 		
 		mntmCines = new JMenuItem("Cines");
-		mntmCines.addActionListener(this);
 		mnMantenimiento.add(mntmCines);
 		
 		mntmSalas = new JMenuItem("Salas");
-		mntmSalas.addActionListener(this);
 		mnMantenimiento.add(mntmSalas);
 		
 		mntmPeliculas = new JMenuItem("Peliculas");
-		mntmPeliculas.addActionListener(this);
 		mnMantenimiento.add(mntmPeliculas);
 		
 		mntmFunciones = new JMenuItem("Funciones");
-		mntmFunciones.addActionListener(this);
 		mnMantenimiento.add(mntmFunciones);
 		
 		mnRegistroDeReserva = new JMenu("Registro de Reserva");
@@ -100,55 +92,5 @@ public class Menu extends JFrame implements ActionListener {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-	}
-	public void actionPerformed(ActionEvent arg0) {
-		if (arg0.getSource() == mntmFunciones) {
-			actionPerformedMntmFunciones(arg0);
-		}
-		if (arg0.getSource() == mntmPeliculas) {
-			actionPerformedMntmPeliculas(arg0);
-		}
-		if (arg0.getSource() == mntmSalas) {
-			actionPerformedMntmSalas(arg0);
-		}
-		if (arg0.getSource() == mntmCines) {
-			actionPerformedMntmCines(arg0);
-		}
-		if (arg0.getSource() == mntmClientes) {
-			actionPerformedMntmClientes(arg0);
-		}
-		if (arg0.getSource() == mntmEmpleados) {
-			actionPerformedMntmEmpleados(arg0);
-		}
-	}
-	protected void actionPerformedMntmEmpleados(ActionEvent arg0) {
-		MantenimientoEmpleados x = new MantenimientoEmpleados();
-		x.setLocationRelativeTo(this);
-		x.setVisible(true);
-	}
-	protected void actionPerformedMntmClientes(ActionEvent arg0) {
-		MantenimientoClientes x = new MantenimientoClientes();
-		x.setLocationRelativeTo(this);
-		x.setVisible(true);
-	}
-	protected void actionPerformedMntmCines(ActionEvent arg0) {
-		MantenimientoCines x = new MantenimientoCines();
-		x.setLocationRelativeTo(this);
-		x.setVisible(true);
-	}
-	protected void actionPerformedMntmSalas(ActionEvent arg0) {
-		MantenimientoSalas x = new MantenimientoSalas();
-		x.setLocationRelativeTo(this);
-		x.setVisible(true);
-	}
-	protected void actionPerformedMntmPeliculas(ActionEvent arg0) {
-		MantenimientoPeliculas x = new MantenimientoPeliculas();
-		x.setLocationRelativeTo(this);
-		x.setVisible(true);
-	}
-	protected void actionPerformedMntmFunciones(ActionEvent arg0) {
-		MantenimientoFunciones x = new MantenimientoFunciones();
-		x.setLocationRelativeTo(this);
-		x.setVisible(true);
 	}
 }

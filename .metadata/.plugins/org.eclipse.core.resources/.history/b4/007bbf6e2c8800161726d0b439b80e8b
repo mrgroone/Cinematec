@@ -73,19 +73,15 @@ public class Menu extends JFrame implements ActionListener {
 		mnMantenimiento.add(mntmClientes);
 		
 		mntmCines = new JMenuItem("Cines");
-		mntmCines.addActionListener(this);
 		mnMantenimiento.add(mntmCines);
 		
 		mntmSalas = new JMenuItem("Salas");
-		mntmSalas.addActionListener(this);
 		mnMantenimiento.add(mntmSalas);
 		
 		mntmPeliculas = new JMenuItem("Peliculas");
-		mntmPeliculas.addActionListener(this);
 		mnMantenimiento.add(mntmPeliculas);
 		
 		mntmFunciones = new JMenuItem("Funciones");
-		mntmFunciones.addActionListener(this);
 		mnMantenimiento.add(mntmFunciones);
 		
 		mnRegistroDeReserva = new JMenu("Registro de Reserva");
@@ -102,18 +98,6 @@ public class Menu extends JFrame implements ActionListener {
 		contentPane.setLayout(null);
 	}
 	public void actionPerformed(ActionEvent arg0) {
-		if (arg0.getSource() == mntmFunciones) {
-			actionPerformedMntmFunciones(arg0);
-		}
-		if (arg0.getSource() == mntmPeliculas) {
-			actionPerformedMntmPeliculas(arg0);
-		}
-		if (arg0.getSource() == mntmSalas) {
-			actionPerformedMntmSalas(arg0);
-		}
-		if (arg0.getSource() == mntmCines) {
-			actionPerformedMntmCines(arg0);
-		}
 		if (arg0.getSource() == mntmClientes) {
 			actionPerformedMntmClientes(arg0);
 		}
@@ -128,26 +112,6 @@ public class Menu extends JFrame implements ActionListener {
 	}
 	protected void actionPerformedMntmClientes(ActionEvent arg0) {
 		MantenimientoClientes x = new MantenimientoClientes();
-		x.setLocationRelativeTo(this);
-		x.setVisible(true);
-	}
-	protected void actionPerformedMntmCines(ActionEvent arg0) {
-		MantenimientoCines x = new MantenimientoCines();
-		x.setLocationRelativeTo(this);
-		x.setVisible(true);
-	}
-	protected void actionPerformedMntmSalas(ActionEvent arg0) {
-		MantenimientoSalas x = new MantenimientoSalas();
-		x.setLocationRelativeTo(this);
-		x.setVisible(true);
-	}
-	protected void actionPerformedMntmPeliculas(ActionEvent arg0) {
-		MantenimientoPeliculas x = new MantenimientoPeliculas();
-		x.setLocationRelativeTo(this);
-		x.setVisible(true);
-	}
-	protected void actionPerformedMntmFunciones(ActionEvent arg0) {
-		MantenimientoFunciones x = new MantenimientoFunciones();
 		x.setLocationRelativeTo(this);
 		x.setVisible(true);
 	}
