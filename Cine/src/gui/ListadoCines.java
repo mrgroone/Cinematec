@@ -10,7 +10,7 @@ import javax.swing.UIManager;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ListadoClientes extends JDialog implements ActionListener {
+public class ListadoCines extends JDialog implements ActionListener {
 	private JScrollPane scrollPane;
 	private JTextArea txtS;
 	private JButton btnCerrar;
@@ -27,7 +27,7 @@ public class ListadoClientes extends JDialog implements ActionListener {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ListadoClientes dialog = new ListadoClientes();
+					ListadoCines dialog = new ListadoCines();
 					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
 					dialog.setVisible(true);
 				}
@@ -41,8 +41,8 @@ public class ListadoClientes extends JDialog implements ActionListener {
 	/**
 	 * Create the dialog.
 	 */
-	public ListadoClientes() {
-		setTitle("Listado Clientes");
+	public ListadoCines() {
+		setTitle("Listado Cines");
 		setBounds(100, 100, 370, 450);
 		getContentPane().setLayout(null);
 		
@@ -78,22 +78,16 @@ public class ListadoClientes extends JDialog implements ActionListener {
 	 * 
 	 */
 	void pruebaListado() {
-		imprimir("Cantidad de Clientes : 1");
+		imprimir("Cantidad de Cines           : 1");
 		
 		imprimir("");
-		imprimir("Codigo                : 1234");
-		imprimir("Nombres               : Mateo");
-		imprimir("Apellido Paterno      : Ramos");
-		imprimir("Apellido Materno      : Ramirez");
-		imprimir("Dirección             : Av. Ejercito 104");
-		imprimir("Fecha de Nacimiento   : 02/04/1984");
-		imprimir("Fecha de Afiliación   : 11/05/2016");
-		imprimir("Estado Civil          : Soltero");
-		imprimir("Teléfono              : 785 5124");
-		imprimir("DNI                   : 45278542");
-		imprimir("Usuario               : MatRamos");
-		imprimir("Contraseña            : 321654");
-		
+		imprimir("Codigo                      : 1234");
+		imprimir("Nombre                      : Pardo");
+		imprimir("Departamento                : Lima");
+		imprimir("Provincia                   : Lima");
+		imprimir("Distrito                    : Miraflores");
+		imprimir("Fecha de Inicio Operaciones : 02/04/1984");
+		imprimir("Tipo                        : Prime");		
 	}
 	
 	void imprimir(String x) {
