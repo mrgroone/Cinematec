@@ -10,8 +10,10 @@ import javax.swing.JPasswordField;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.UIManager;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
-public class Empleados extends JDialog {
+public class Empleados extends JDialog implements ActionListener {
 	private JLabel lblCodigo;
 	private JLabel lblNombres;
 	private JLabel lblApellidoPaterno;
@@ -19,14 +21,14 @@ public class Empleados extends JDialog {
 	private JLabel lblTipo;
 	private JLabel lblUsuario;
 	private JLabel lblContrasena;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_5;
-	private JComboBox comboBox;
-	private JPasswordField passwordField;
-	private JComboBox comboBox_1;
+	private JTextField txtApePat;
+	private JTextField txtApeMat;
+	private JTextField txtNombres;
+	private JTextField txtCodigo;
+	private JTextField txtUsuario;
+	private JComboBox cboTipo;
+	private JPasswordField txtContrasena;
+	private JComboBox cboOpciones;
 	private JButton btnGrabar;
 	private JButton btnListado;
 	private JButton btnCerrar;
@@ -59,7 +61,7 @@ public class Empleados extends JDialog {
 	 */
 	public Empleados() {
 		setTitle("Mantenimiento - Empleados");
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 450, 230);
 		getContentPane().setLayout(null);
 		
 		lblCodigo = new JLabel("Codigo");
@@ -90,56 +92,75 @@ public class Empleados extends JDialog {
 		lblContrasena.setBounds(10, 161, 56, 14);
 		getContentPane().add(lblContrasena);
 		
-		textField = new JTextField();
-		textField.setBounds(98, 58, 91, 20);
-		getContentPane().add(textField);
-		textField.setColumns(10);
+		txtApePat = new JTextField();
+		txtApePat.setBounds(98, 58, 91, 20);
+		getContentPane().add(txtApePat);
+		txtApePat.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(98, 83, 91, 20);
-		getContentPane().add(textField_1);
-		textField_1.setColumns(10);
+		txtApeMat = new JTextField();
+		txtApeMat.setBounds(98, 83, 91, 20);
+		getContentPane().add(txtApeMat);
+		txtApeMat.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setBounds(98, 33, 91, 20);
-		getContentPane().add(textField_2);
-		textField_2.setColumns(10);
+		txtNombres = new JTextField();
+		txtNombres.setBounds(98, 33, 91, 20);
+		getContentPane().add(txtNombres);
+		txtNombres.setColumns(10);
 		
-		textField_3 = new JTextField();
-		textField_3.setBounds(98, 8, 91, 20);
-		getContentPane().add(textField_3);
-		textField_3.setColumns(10);
+		txtCodigo = new JTextField();
+		txtCodigo.setEditable(false);
+		txtCodigo.setBounds(98, 8, 91, 20);
+		getContentPane().add(txtCodigo);
+		txtCodigo.setColumns(10);
 		
-		textField_5 = new JTextField();
-		textField_5.setBounds(98, 133, 91, 20);
-		getContentPane().add(textField_5);
-		textField_5.setColumns(10);
+		txtUsuario = new JTextField();
+		txtUsuario.setBounds(98, 133, 91, 20);
+		getContentPane().add(txtUsuario);
+		txtUsuario.setColumns(10);
 		
-		comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Administrador", "Supervisor", "Cajero"}));
-		comboBox.setBounds(98, 108, 91, 20);
-		getContentPane().add(comboBox);
+		cboTipo = new JComboBox();
+		cboTipo.setModel(new DefaultComboBoxModel(new String[] {"Administrador", "Supervisor", "Cajero"}));
+		cboTipo.setBounds(98, 108, 91, 20);
+		getContentPane().add(cboTipo);
 		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(98, 158, 91, 20);
-		getContentPane().add(passwordField);
+		txtContrasena = new JPasswordField();
+		txtContrasena.setBounds(98, 158, 91, 20);
+		getContentPane().add(txtContrasena);
 		
-		comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Ingreso", "Modificaci\u00F3n", "Eliminaci\u00F3n"}));
-		comboBox_1.setBounds(335, 8, 89, 20);
-		getContentPane().add(comboBox_1);
+		cboOpciones = new JComboBox();
+		cboOpciones.setModel(new DefaultComboBoxModel(new String[] {"Ingreso", "Modificaci\u00F3n", "Eliminaci\u00F3n"}));
+		cboOpciones.setBounds(335, 8, 89, 20);
+		getContentPane().add(cboOpciones);
 		
 		btnGrabar = new JButton("Grabar");
 		btnGrabar.setBounds(335, 32, 89, 23);
 		getContentPane().add(btnGrabar);
 		
 		btnListado = new JButton("Listado");
+		btnListado.addActionListener(this);
 		btnListado.setBounds(335, 57, 89, 23);
 		getContentPane().add(btnListado);
 		
 		btnCerrar = new JButton("Cerrar");
+		btnCerrar.addActionListener(this);
 		btnCerrar.setBounds(335, 82, 89, 23);
 		getContentPane().add(btnCerrar);
 
+	}
+	public void actionPerformed(ActionEvent arg0) {
+		if (arg0.getSource() == btnListado) {
+			actionPerformedBtnListado(arg0);
+		}
+		if (arg0.getSource() == btnCerrar) {
+			actionPerformedBtnCerrar(arg0);
+		}
+	}
+	protected void actionPerformedBtnCerrar(ActionEvent arg0) {
+		dispose();
+	}
+	protected void actionPerformedBtnListado(ActionEvent arg0) {
+		ListadoEmpleados x = new ListadoEmpleados();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
 	}
 }
