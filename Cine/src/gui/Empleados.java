@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JDialog;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JComboBox;
 import javax.swing.JPasswordField;
@@ -133,6 +134,7 @@ public class Empleados extends JDialog implements ActionListener {
 		getContentPane().add(cboOpciones);
 		
 		btnGrabar = new JButton("Grabar");
+		btnGrabar.addActionListener(this);
 		btnGrabar.setBounds(335, 32, 89, 23);
 		getContentPane().add(btnGrabar);
 		
@@ -148,6 +150,9 @@ public class Empleados extends JDialog implements ActionListener {
 
 	}
 	public void actionPerformed(ActionEvent arg0) {
+		if (arg0.getSource() == btnGrabar) {
+			actionPerformedBtnGrabar(arg0);
+		}
 		if (arg0.getSource() == btnListado) {
 			actionPerformedBtnListado(arg0);
 		}
@@ -162,5 +167,9 @@ public class Empleados extends JDialog implements ActionListener {
 		ListadoEmpleados x = new ListadoEmpleados();
 		x.setLocationRelativeTo(this);
 		x.setVisible(true);
+	}
+	protected void actionPerformedBtnGrabar(ActionEvent arg0) {
+		String s = "¿Esta seguro de Grabar?";
+		JOptionPane.showConfirmDialog(this, s);
 	}
 }
