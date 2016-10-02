@@ -28,10 +28,6 @@ public class Menu extends JFrame implements ActionListener {
 	private JMenuItem mntmFunciones;
 	private JButton btnRegistroDeReserva;
 	private JButton btnControlDePago;
-	private JMenuItem mntmPeliculaMasTaquillera;
-	private JMenuItem mntmListadoDeReservas;
-	private JMenuItem mntmListadoDeReservasEm;
-	private JMenuItem mntmListadoDeReservas_2;
 
 	/**
 	 * Launch the application.
@@ -95,18 +91,6 @@ public class Menu extends JFrame implements ActionListener {
 		
 		mnReportes = new JMenu("Reportes");
 		menuBar.add(mnReportes);
-		
-		mntmPeliculaMasTaquillera = new JMenuItem("Pel\u00EDcula taquillera");
-		mnReportes.add(mntmPeliculaMasTaquillera);
-		
-		mntmListadoDeReservas = new JMenuItem("Listado de reservas");
-		mnReportes.add(mntmListadoDeReservas);
-		
-		mntmListadoDeReservasEm = new JMenuItem("Listado de reservas empleado");
-		mnReportes.add(mntmListadoDeReservasEm);
-		
-		mntmListadoDeReservas_2 = new JMenuItem("Listado de reservas cliente");
-		mnReportes.add(mntmListadoDeReservas_2);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

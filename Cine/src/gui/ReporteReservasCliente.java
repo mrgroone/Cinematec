@@ -1,0 +1,120 @@
+package gui;
+
+import java.awt.EventQueue;
+
+import javax.swing.JDialog;
+import javax.swing.UIManager;
+import javax.swing.JLabel;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class ReporteReservasCliente extends JDialog implements ActionListener {
+	private JLabel lblCliente;
+	private JComboBox cboCliente;
+	private JLabel lblDe;
+	private JLabel lblHasta;
+	private JTextField txtDe;
+	private JTextField txtHasta;
+	private JButton btnBuscar;
+	private JButton btnCerrar;
+	private JScrollPane scrollPane;
+	private JTextArea txtS;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ReporteReservasCliente dialog = new ReporteReservasCliente();
+					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					dialog.setVisible(true);
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public ReporteReservasCliente() {
+		setTitle("Listado de reservas efectuadas por un cliente ");
+		setBounds(100, 100, 450, 300);
+		getContentPane().setLayout(null);
+		
+		lblCliente = new JLabel("Cliente");
+		lblCliente.setBounds(10, 11, 46, 14);
+		getContentPane().add(lblCliente);
+		
+		cboCliente = new JComboBox();
+		cboCliente.setModel(new DefaultComboBoxModel(new String[] {"Seleccionar"}));
+		cboCliente.setBounds(66, 8, 86, 20);
+		getContentPane().add(cboCliente);
+		
+		lblDe = new JLabel("De:");
+		lblDe.setBounds(10, 36, 46, 14);
+		getContentPane().add(lblDe);
+		
+		lblHasta = new JLabel("Hasta:");
+		lblHasta.setBounds(10, 61, 46, 14);
+		getContentPane().add(lblHasta);
+		
+		txtDe = new JTextField();
+		txtDe.setBounds(66, 33, 86, 20);
+		getContentPane().add(txtDe);
+		txtDe.setColumns(10);
+		
+		txtHasta = new JTextField();
+		txtHasta.setBounds(66, 58, 86, 20);
+		getContentPane().add(txtHasta);
+		txtHasta.setColumns(10);
+		
+		btnBuscar = new JButton("Buscar");
+		btnBuscar.addActionListener(this);
+		btnBuscar.setBounds(335, 7, 89, 23);
+		getContentPane().add(btnBuscar);
+		
+		btnCerrar = new JButton("Cerrar");
+		btnCerrar.addActionListener(this);
+		btnCerrar.setBounds(335, 32, 89, 23);
+		getContentPane().add(btnCerrar);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 86, 414, 164);
+		getContentPane().add(scrollPane);
+		
+		txtS = new JTextArea();
+		scrollPane.setViewportView(txtS);
+
+	}
+
+	public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == btnCerrar) {
+			actionPerformedBtnCerrar(e);
+		}
+		if (e.getSource() == btnBuscar) {
+			actionPerformedBtnBuscar(e);
+		}
+	}
+	protected void actionPerformedBtnBuscar(ActionEvent e) {
+		txtS.setText("Cliente");
+	}
+	protected void actionPerformedBtnCerrar(ActionEvent e) {
+		dispose();
+	}
+}

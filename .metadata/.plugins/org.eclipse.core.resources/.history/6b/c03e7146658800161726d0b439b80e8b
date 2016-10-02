@@ -19,6 +19,7 @@ public class Menu extends JFrame implements ActionListener {
 	private JPanel contentPane;
 	private JMenuBar menuBar;
 	private JMenu mnMantenimiento;
+	private JMenu mnControlDePago;
 	private JMenu mnReportes;
 	private JMenuItem mntmEmpleados;
 	private JMenuItem mntmClientes;
@@ -27,11 +28,6 @@ public class Menu extends JFrame implements ActionListener {
 	private JMenuItem mntmPeliculas;
 	private JMenuItem mntmFunciones;
 	private JButton btnRegistroDeReserva;
-	private JButton btnControlDePago;
-	private JMenuItem mntmPeliculaMasTaquillera;
-	private JMenuItem mntmListadoDeReservas;
-	private JMenuItem mntmListadoDeReservasEm;
-	private JMenuItem mntmListadoDeReservas_2;
 
 	/**
 	 * Launch the application.
@@ -93,20 +89,11 @@ public class Menu extends JFrame implements ActionListener {
 		mntmFunciones.addActionListener(this);
 		mnMantenimiento.add(mntmFunciones);
 		
+		mnControlDePago = new JMenu("Control de Pago");
+		menuBar.add(mnControlDePago);
+		
 		mnReportes = new JMenu("Reportes");
 		menuBar.add(mnReportes);
-		
-		mntmPeliculaMasTaquillera = new JMenuItem("Pel\u00EDcula taquillera");
-		mnReportes.add(mntmPeliculaMasTaquillera);
-		
-		mntmListadoDeReservas = new JMenuItem("Listado de reservas");
-		mnReportes.add(mntmListadoDeReservas);
-		
-		mntmListadoDeReservasEm = new JMenuItem("Listado de reservas empleado");
-		mnReportes.add(mntmListadoDeReservasEm);
-		
-		mntmListadoDeReservas_2 = new JMenuItem("Listado de reservas cliente");
-		mnReportes.add(mntmListadoDeReservas_2);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -116,16 +103,8 @@ public class Menu extends JFrame implements ActionListener {
 		btnRegistroDeReserva.addActionListener(this);
 		btnRegistroDeReserva.setBounds(293, 11, 131, 23);
 		contentPane.add(btnRegistroDeReserva);
-		
-		btnControlDePago = new JButton("Control de Pago");
-		btnControlDePago.addActionListener(this);
-		btnControlDePago.setBounds(293, 45, 131, 23);
-		contentPane.add(btnControlDePago);
 	}
 	public void actionPerformed(ActionEvent arg0) {
-		if (arg0.getSource() == btnControlDePago) {
-			actionPerformedBtnControlDePago(arg0);
-		}
 		if (arg0.getSource() == btnRegistroDeReserva) {
 			actionPerformedBtnRegistroDeReserva(arg0);
 		}
@@ -180,11 +159,6 @@ public class Menu extends JFrame implements ActionListener {
 	}
 	protected void actionPerformedBtnRegistroDeReserva(ActionEvent arg0) {
 		RegistroReserva x = new RegistroReserva();
-		x.setLocationRelativeTo(this);
-		x.setVisible(true);
-	}
-	protected void actionPerformedBtnControlDePago(ActionEvent arg0) {
-		ControlPago x = new ControlPago();
 		x.setLocationRelativeTo(this);
 		x.setVisible(true);
 	}
