@@ -1,0 +1,265 @@
+package gui;
+
+import java.awt.EventQueue;
+
+import javax.swing.JDialog;
+import javax.swing.UIManager;
+import javax.swing.JToggleButton;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.Color;
+
+public class RegistroReservaButacas extends JDialog {
+	private JToggleButton tglbtnNewToggleButton;
+	private JToggleButton toggleButton;
+	private JToggleButton toggleButton_1;
+	private JToggleButton toggleButton_2;
+	private JToggleButton toggleButton_3;
+	private JToggleButton toggleButton_4;
+	private JToggleButton toggleButton_5;
+	private JToggleButton toggleButton_6;
+	private JToggleButton toggleButton_7;
+	private JToggleButton toggleButton_8;
+	private JToggleButton toggleButton_9;
+	private JToggleButton toggleButton_10;
+	private JToggleButton toggleButton_11;
+	private JToggleButton toggleButton_12;
+	private JToggleButton toggleButton_13;
+	private JToggleButton toggleButton_14;
+	private JToggleButton toggleButton_15;
+	private JToggleButton toggleButton_16;
+	private JToggleButton toggleButton_17;
+	private JToggleButton toggleButton_18;
+	private JToggleButton toggleButton_19;
+	private JToggleButton toggleButton_20;
+	private JToggleButton toggleButton_21;
+	private JToggleButton toggleButton_22;
+	private JToggleButton toggleButton_23;
+	private JToggleButton toggleButton_24;
+	private JToggleButton toggleButton_25;
+	private JToggleButton toggleButton_26;
+	private JToggleButton toggleButton_27;
+	private JToggleButton toggleButton_28;
+	private JToggleButton toggleButton_29;
+	private JToggleButton toggleButton_30;
+	private JToggleButton toggleButton_31;
+	private JToggleButton toggleButton_32;
+	private JToggleButton toggleButton_33;
+	private JToggleButton toggleButton_34;
+	private JToggleButton toggleButton_35;
+	private JToggleButton toggleButton_36;
+	private JToggleButton toggleButton_37;
+	private JToggleButton toggleButton_38;
+	private JToggleButton toggleButton_39;
+	private JToggleButton toggleButton_40;
+	private JLabel lblPantalla;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					RegistroReservaButacas dialog = new RegistroReservaButacas();
+					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					dialog.setVisible(true);
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public RegistroReservaButacas() {
+		setBounds(100, 100, 450, 300);
+		getContentPane().setLayout(null);
+		
+		tglbtnNewToggleButton = new JToggleButton("A1");
+		tglbtnNewToggleButton.setBounds(10, 57, 51, 23);
+		getContentPane().add(tglbtnNewToggleButton);
+		
+		toggleButton = new JToggleButton("A1");
+		toggleButton.setBounds(71, 57, 51, 23);
+		getContentPane().add(toggleButton);
+		
+		toggleButton_1 = new JToggleButton("A1");
+		toggleButton_1.setBounds(132, 57, 51, 23);
+		getContentPane().add(toggleButton_1);
+		
+		toggleButton_2 = new JToggleButton("A1");
+		toggleButton_2.setBounds(193, 57, 51, 23);
+		getContentPane().add(toggleButton_2);
+		
+		toggleButton_3 = new JToggleButton("A1");
+		toggleButton_3.setBounds(254, 57, 51, 23);
+		getContentPane().add(toggleButton_3);
+		
+		toggleButton_4 = new JToggleButton("A1");
+		toggleButton_4.setBounds(315, 57, 51, 23);
+		getContentPane().add(toggleButton_4);
+		
+		toggleButton_5 = new JToggleButton("A1");
+		toggleButton_5.setBounds(376, 57, 51, 23);
+		getContentPane().add(toggleButton_5);
+		
+		toggleButton_6 = new JToggleButton("A1");
+		toggleButton_6.setBounds(10, 91, 51, 23);
+		getContentPane().add(toggleButton_6);
+		
+		toggleButton_7 = new JToggleButton("A1");
+		toggleButton_7.setBounds(71, 91, 51, 23);
+		getContentPane().add(toggleButton_7);
+		
+		toggleButton_8 = new JToggleButton("A1");
+		toggleButton_8.setBounds(132, 91, 51, 23);
+		getContentPane().add(toggleButton_8);
+		
+		toggleButton_9 = new JToggleButton("A1");
+		toggleButton_9.setBounds(193, 91, 51, 23);
+		getContentPane().add(toggleButton_9);
+		
+		toggleButton_10 = new JToggleButton("A1");
+		toggleButton_10.setBounds(254, 91, 51, 23);
+		getContentPane().add(toggleButton_10);
+		
+		toggleButton_11 = new JToggleButton("A1");
+		toggleButton_11.setBounds(315, 91, 51, 23);
+		getContentPane().add(toggleButton_11);
+		
+		toggleButton_12 = new JToggleButton("A1");
+		toggleButton_12.setBounds(376, 91, 51, 23);
+		getContentPane().add(toggleButton_12);
+		
+		toggleButton_13 = new JToggleButton("A1");
+		toggleButton_13.setBounds(10, 125, 51, 23);
+		getContentPane().add(toggleButton_13);
+		
+		toggleButton_14 = new JToggleButton("A1");
+		toggleButton_14.setBounds(71, 125, 51, 23);
+		getContentPane().add(toggleButton_14);
+		
+		toggleButton_15 = new JToggleButton("A1");
+		toggleButton_15.setBounds(132, 125, 51, 23);
+		getContentPane().add(toggleButton_15);
+		
+		toggleButton_16 = new JToggleButton("A1");
+		toggleButton_16.setBounds(193, 125, 51, 23);
+		getContentPane().add(toggleButton_16);
+		
+		toggleButton_17 = new JToggleButton("A1");
+		toggleButton_17.setBounds(254, 125, 51, 23);
+		getContentPane().add(toggleButton_17);
+		
+		toggleButton_18 = new JToggleButton("A1");
+		toggleButton_18.setBounds(315, 125, 51, 23);
+		getContentPane().add(toggleButton_18);
+		
+		toggleButton_19 = new JToggleButton("A1");
+		toggleButton_19.setBounds(376, 125, 51, 23);
+		getContentPane().add(toggleButton_19);
+		
+		toggleButton_20 = new JToggleButton("A1");
+		toggleButton_20.setBounds(10, 159, 51, 23);
+		getContentPane().add(toggleButton_20);
+		
+		toggleButton_21 = new JToggleButton("A1");
+		toggleButton_21.setBounds(71, 159, 51, 23);
+		getContentPane().add(toggleButton_21);
+		
+		toggleButton_22 = new JToggleButton("A1");
+		toggleButton_22.setBounds(132, 159, 51, 23);
+		getContentPane().add(toggleButton_22);
+		
+		toggleButton_23 = new JToggleButton("A1");
+		toggleButton_23.setBounds(193, 159, 51, 23);
+		getContentPane().add(toggleButton_23);
+		
+		toggleButton_24 = new JToggleButton("A1");
+		toggleButton_24.setBounds(254, 159, 51, 23);
+		getContentPane().add(toggleButton_24);
+		
+		toggleButton_25 = new JToggleButton("A1");
+		toggleButton_25.setBounds(315, 159, 51, 23);
+		getContentPane().add(toggleButton_25);
+		
+		toggleButton_26 = new JToggleButton("A1");
+		toggleButton_26.setBounds(376, 159, 51, 23);
+		getContentPane().add(toggleButton_26);
+		
+		toggleButton_27 = new JToggleButton("A1");
+		toggleButton_27.setBounds(10, 193, 51, 23);
+		getContentPane().add(toggleButton_27);
+		
+		toggleButton_28 = new JToggleButton("A1");
+		toggleButton_28.setBounds(71, 193, 51, 23);
+		getContentPane().add(toggleButton_28);
+		
+		toggleButton_29 = new JToggleButton("A1");
+		toggleButton_29.setBounds(132, 193, 51, 23);
+		getContentPane().add(toggleButton_29);
+		
+		toggleButton_30 = new JToggleButton("A1");
+		toggleButton_30.setBounds(193, 193, 51, 23);
+		getContentPane().add(toggleButton_30);
+		
+		toggleButton_31 = new JToggleButton("A1");
+		toggleButton_31.setBounds(254, 193, 51, 23);
+		getContentPane().add(toggleButton_31);
+		
+		toggleButton_32 = new JToggleButton("A1");
+		toggleButton_32.setBounds(315, 193, 51, 23);
+		getContentPane().add(toggleButton_32);
+		
+		toggleButton_33 = new JToggleButton("A1");
+		toggleButton_33.setBounds(376, 193, 51, 23);
+		getContentPane().add(toggleButton_33);
+		
+		toggleButton_34 = new JToggleButton("A1");
+		toggleButton_34.setBounds(10, 227, 51, 23);
+		getContentPane().add(toggleButton_34);
+		
+		toggleButton_35 = new JToggleButton("A1");
+		toggleButton_35.setBounds(71, 227, 51, 23);
+		getContentPane().add(toggleButton_35);
+		
+		toggleButton_36 = new JToggleButton("A1");
+		toggleButton_36.setBounds(132, 227, 51, 23);
+		getContentPane().add(toggleButton_36);
+		
+		toggleButton_37 = new JToggleButton("A1");
+		toggleButton_37.setBounds(193, 227, 51, 23);
+		getContentPane().add(toggleButton_37);
+		
+		toggleButton_38 = new JToggleButton("A1");
+		toggleButton_38.setBounds(254, 227, 51, 23);
+		getContentPane().add(toggleButton_38);
+		
+		toggleButton_39 = new JToggleButton("A1");
+		toggleButton_39.setBounds(315, 227, 51, 23);
+		getContentPane().add(toggleButton_39);
+		
+		toggleButton_40 = new JToggleButton("A1");
+		toggleButton_40.setBounds(376, 227, 51, 23);
+		getContentPane().add(toggleButton_40);
+		
+		lblPantalla = new JLabel("PANTALLA");
+		lblPantalla.setForeground(Color.WHITE);
+		lblPantalla.setBackground(Color.BLACK);
+		lblPantalla.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblPantalla.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPantalla.setBounds(10, 11, 417, 17);
+		getContentPane().add(lblPantalla);
+
+	}
+}

@@ -149,7 +149,6 @@ public class RegistroReserva extends JDialog implements ActionListener {
 		getContentPane().add(lblButacas);
 		
 		btnElegir = new JButton("Asientos");
-		btnElegir.addActionListener(this);
 		btnElegir.setBounds(148, 232, 122, 23);
 		getContentPane().add(btnElegir);
 		
@@ -202,9 +201,6 @@ public class RegistroReserva extends JDialog implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent arg0) {
-		if (arg0.getSource() == btnElegir) {
-			actionPerformedBtnElegir(arg0);
-		}
 		if (arg0.getSource() == btnNuevoCliente) {
 			actionPerformedBtnNuevoCliente(arg0);
 		}
@@ -240,11 +236,6 @@ public class RegistroReserva extends JDialog implements ActionListener {
 	}
 	protected void actionPerformedBtnNuevoCliente(ActionEvent arg0) {
 		MantenimientoClientes x = new MantenimientoClientes();
-		x.setLocationRelativeTo(this);
-		x.setVisible(true);
-	}
-	protected void actionPerformedBtnElegir(ActionEvent arg0) {
-		RegistroReservaButacas x = new RegistroReservaButacas();
 		x.setLocationRelativeTo(this);
 		x.setVisible(true);
 	}
