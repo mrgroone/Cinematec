@@ -12,13 +12,13 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import javax.swing.JButton;
 
 public class Menu extends JFrame implements ActionListener {
 
 	private JPanel contentPane;
 	private JMenuBar menuBar;
 	private JMenu mnMantenimiento;
+	private JMenu mnRegistroDeReserva;
 	private JMenu mnControlDePago;
 	private JMenu mnReportes;
 	private JMenuItem mntmEmpleados;
@@ -27,7 +27,6 @@ public class Menu extends JFrame implements ActionListener {
 	private JMenuItem mntmSalas;
 	private JMenuItem mntmPeliculas;
 	private JMenuItem mntmFunciones;
-	private JButton btnRegistroDeReserva;
 
 	/**
 	 * Launch the application.
@@ -89,6 +88,9 @@ public class Menu extends JFrame implements ActionListener {
 		mntmFunciones.addActionListener(this);
 		mnMantenimiento.add(mntmFunciones);
 		
+		mnRegistroDeReserva = new JMenu("Registro de Reserva");
+		menuBar.add(mnRegistroDeReserva);
+		
 		mnControlDePago = new JMenu("Control de Pago");
 		menuBar.add(mnControlDePago);
 		
@@ -98,16 +100,8 @@ public class Menu extends JFrame implements ActionListener {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		btnRegistroDeReserva = new JButton("Registro de Reserva");
-		btnRegistroDeReserva.addActionListener(this);
-		btnRegistroDeReserva.setBounds(293, 11, 131, 23);
-		contentPane.add(btnRegistroDeReserva);
 	}
 	public void actionPerformed(ActionEvent arg0) {
-		if (arg0.getSource() == btnRegistroDeReserva) {
-			actionPerformedBtnRegistroDeReserva(arg0);
-		}
 		if (arg0.getSource() == mntmFunciones) {
 			actionPerformedMntmFunciones(arg0);
 		}
@@ -154,11 +148,6 @@ public class Menu extends JFrame implements ActionListener {
 	}
 	protected void actionPerformedMntmFunciones(ActionEvent arg0) {
 		MantenimientoFunciones x = new MantenimientoFunciones();
-		x.setLocationRelativeTo(this);
-		x.setVisible(true);
-	}
-	protected void actionPerformedBtnRegistroDeReserva(ActionEvent arg0) {
-		RegistroReserva x = new RegistroReserva();
 		x.setLocationRelativeTo(this);
 		x.setVisible(true);
 	}

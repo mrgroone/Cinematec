@@ -19,6 +19,7 @@ public class Menu extends JFrame implements ActionListener {
 	private JPanel contentPane;
 	private JMenuBar menuBar;
 	private JMenu mnMantenimiento;
+	private JMenu mnRegistroDeReserva;
 	private JMenu mnControlDePago;
 	private JMenu mnReportes;
 	private JMenuItem mntmEmpleados;
@@ -89,6 +90,10 @@ public class Menu extends JFrame implements ActionListener {
 		mntmFunciones.addActionListener(this);
 		mnMantenimiento.add(mntmFunciones);
 		
+		mnRegistroDeReserva = new JMenu("Registro de Reserva");
+		mnRegistroDeReserva.addActionListener(this);
+		menuBar.add(mnRegistroDeReserva);
+		
 		mnControlDePago = new JMenu("Control de Pago");
 		menuBar.add(mnControlDePago);
 		
@@ -107,6 +112,9 @@ public class Menu extends JFrame implements ActionListener {
 	public void actionPerformed(ActionEvent arg0) {
 		if (arg0.getSource() == btnRegistroDeReserva) {
 			actionPerformedBtnRegistroDeReserva(arg0);
+		}
+		if (arg0.getSource() == mnRegistroDeReserva) {
+			actionPerformedMnRegistroDeReserva(arg0);
 		}
 		if (arg0.getSource() == mntmFunciones) {
 			actionPerformedMntmFunciones(arg0);
@@ -154,6 +162,11 @@ public class Menu extends JFrame implements ActionListener {
 	}
 	protected void actionPerformedMntmFunciones(ActionEvent arg0) {
 		MantenimientoFunciones x = new MantenimientoFunciones();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+	protected void actionPerformedMnRegistroDeReserva(ActionEvent arg0) {
+		RegistroReserva x = new RegistroReserva();
 		x.setLocationRelativeTo(this);
 		x.setVisible(true);
 	}
