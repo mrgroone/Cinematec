@@ -1,0 +1,214 @@
+package gui;
+
+import java.awt.EventQueue;
+
+import javax.swing.JDialog;
+import javax.swing.UIManager;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.SwingConstants;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class RegistroReserva extends JDialog implements ActionListener {
+	private JLabel lblCodigoCliente;
+	private JTextField txtCodigoCliente;
+	private JButton btnNuevoCliente;
+	private JLabel lblPelicula;
+	private JComboBox cboPelicula;
+	private JLabel lblCiudad;
+	private JComboBox cboCiudad;
+	private JLabel lblCine;
+	private JComboBox cboCine;
+	private JLabel lblFecha;
+	private JTextField txtFecha;
+	private JLabel lblHora;
+	private JTextField txtHora;
+	private JLabel lblEntradas;
+	private JComboBox cboEntradas;
+	private JTextField txtCantidadEntradas;
+	private JLabel lblButacas;
+	private JButton btnElegir;
+	private JTextField txtButacasAsientos;
+	private JButton btnCerrar;
+	private JScrollPane scrollPane;
+	private JTextArea txtS;
+	private JButton btnGenerar;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					RegistroReserva dialog = new RegistroReserva();
+					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					dialog.setVisible(true);
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public RegistroReserva() {
+		setTitle("Resgistro de Reserva");
+		setBounds(100, 100, 450, 507);
+		getContentPane().setLayout(null);
+		
+		lblCodigoCliente = new JLabel("Codigo Cliente");
+		lblCodigoCliente.setBounds(10, 11, 69, 14);
+		getContentPane().add(lblCodigoCliente);
+		
+		txtCodigoCliente = new JTextField();
+		txtCodigoCliente.setBounds(89, 8, 122, 20);
+		getContentPane().add(txtCodigoCliente);
+		txtCodigoCliente.setColumns(10);
+		
+		btnNuevoCliente = new JButton("Nuevo Cliente");
+		btnNuevoCliente.setBounds(325, 7, 99, 23);
+		getContentPane().add(btnNuevoCliente);
+		
+		lblPelicula = new JLabel("Pelicula");
+		lblPelicula.setBounds(10, 36, 35, 14);
+		getContentPane().add(lblPelicula);
+		
+		cboPelicula = new JComboBox();
+		cboPelicula.setModel(new DefaultComboBoxModel(new String[] {"Seleccionar"}));
+		cboPelicula.setBounds(89, 33, 122, 20);
+		getContentPane().add(cboPelicula);
+		
+		lblCiudad = new JLabel("Ciudad");
+		lblCiudad.setBounds(10, 61, 46, 14);
+		getContentPane().add(lblCiudad);
+		
+		cboCiudad = new JComboBox();
+		cboCiudad.setModel(new DefaultComboBoxModel(new String[] {"Seleccionar"}));
+		cboCiudad.setBounds(89, 58, 122, 20);
+		getContentPane().add(cboCiudad);
+		
+		lblCine = new JLabel("Cine");
+		lblCine.setBounds(10, 86, 46, 14);
+		getContentPane().add(lblCine);
+		
+		cboCine = new JComboBox();
+		cboCine.setModel(new DefaultComboBoxModel(new String[] {"Seleccionar"}));
+		cboCine.setBounds(89, 83, 122, 20);
+		getContentPane().add(cboCine);
+		
+		lblFecha = new JLabel("Fecha");
+		lblFecha.setBounds(10, 111, 46, 14);
+		getContentPane().add(lblFecha);
+		
+		txtFecha = new JTextField();
+		txtFecha.setBounds(89, 108, 122, 20);
+		getContentPane().add(txtFecha);
+		txtFecha.setColumns(10);
+		
+		lblHora = new JLabel("Hora");
+		lblHora.setBounds(10, 136, 46, 14);
+		getContentPane().add(lblHora);
+		
+		txtHora = new JTextField();
+		txtHora.setBounds(89, 133, 122, 20);
+		getContentPane().add(txtHora);
+		txtHora.setColumns(10);
+		
+		lblEntradas = new JLabel("Entradas");
+		lblEntradas.setBounds(10, 161, 46, 14);
+		getContentPane().add(lblEntradas);
+		
+		cboEntradas = new JComboBox();
+		cboEntradas.setModel(new DefaultComboBoxModel(new String[] {"General", "Menores de 11 a\u00F1os", "Mayores de 60 a\u00F1os"}));
+		cboEntradas.setBounds(89, 158, 122, 20);
+		getContentPane().add(cboEntradas);
+		
+		txtCantidadEntradas = new JTextField();
+		txtCantidadEntradas.setHorizontalAlignment(SwingConstants.RIGHT);
+		txtCantidadEntradas.setText("0");
+		txtCantidadEntradas.setBounds(221, 158, 86, 20);
+		getContentPane().add(txtCantidadEntradas);
+		txtCantidadEntradas.setColumns(10);
+		
+		lblButacas = new JLabel("Butacas");
+		lblButacas.setBounds(10, 186, 46, 14);
+		getContentPane().add(lblButacas);
+		
+		btnElegir = new JButton("Asientos");
+		btnElegir.setBounds(89, 182, 122, 23);
+		getContentPane().add(btnElegir);
+		
+		txtButacasAsientos = new JTextField();
+		txtButacasAsientos.setText("-");
+		txtButacasAsientos.setEditable(false);
+		txtButacasAsientos.setBounds(221, 183, 86, 20);
+		getContentPane().add(txtButacasAsientos);
+		txtButacasAsientos.setColumns(10);
+		
+		btnCerrar = new JButton("Cerrar");
+		btnCerrar.setBounds(325, 57, 99, 23);
+		getContentPane().add(btnCerrar);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 211, 414, 246);
+		getContentPane().add(scrollPane);
+		
+		txtS = new JTextArea();
+		scrollPane.setViewportView(txtS);
+		
+		btnGenerar = new JButton("Generar");
+		btnGenerar.addActionListener(this);
+		btnGenerar.setBounds(325, 32, 99, 23);
+		getContentPane().add(btnGenerar);
+		
+		
+		/*
+		 * 
+		 */
+		
+
+		
+
+	}
+
+	public void actionPerformed(ActionEvent arg0) {
+		if (arg0.getSource() == btnGenerar) {
+			actionPerformedBtnGenerar(arg0);
+		}
+	}
+	protected void actionPerformedBtnGenerar(ActionEvent arg0) {
+		imprimir("Codigo de Reserva : 123456");
+		imprimir("Codigo del Empleado : 45678");
+		imprimir("Codigo de la Sala : 88565");
+		imprimir("Codigo del Cliente : 556432");
+		imprimir("Nombres : Jefrey");
+		imprimir("Apellido Paterno: De La Torre");
+		imprimir("Apellido Materno: Manrique");
+		imprimir("Titulo de la Pelicula : Deadpool");
+		imprimir("Hora : 13:50");
+		imprimir("Fecha : 05/10/2016");
+		imprimir("Entradas General: 2");
+		imprimir("Entradas Menores de 11 años : 0");
+		imprimir("Entradas Mayores de 60 años : 1");
+		imprimir("Butacas : D11, D12, D13");
+	}
+	
+	void imprimir(String x) {
+		txtS.append(x + "\n");
+	}
+}
