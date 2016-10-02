@@ -15,6 +15,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class MantenimientoClientes extends JDialog implements ActionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JLabel lblCodigo;
 	private JLabel lblNombres;
 	private JLabel lblApellidoPaterno;
@@ -24,7 +28,7 @@ public class MantenimientoClientes extends JDialog implements ActionListener {
 	private JTextField txtNombres;
 	private JTextField txtCodigo;
 	private JTextField txtFechaNacimiento;
-	private JComboBox cboOpciones;
+	private JComboBox<?> cboOpciones;
 	private JButton btnGrabar;
 	private JButton btnListado;
 	private JButton btnCerrar;
@@ -34,7 +38,7 @@ public class MantenimientoClientes extends JDialog implements ActionListener {
 	private JLabel lblFechaDeAfiliacin;
 	private JTextField txtFechaAfiliacion;
 	private JLabel lblEstadoCivil;
-	private JComboBox comboBox;
+	private JComboBox<?> comboBox;
 	private JLabel lblTelefono;
 	private JTextField txtTelefono;
 	private JLabel lblDni;

@@ -1,6 +1,5 @@
 package gui;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -12,16 +11,21 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.UIManager;
+import javax.swing.JPasswordField;
 
 public class Login extends JFrame implements ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JLabel lblUsuario;
 	private JTextField txtUsuario;
 	private JLabel lblContrasena;
-	private JTextField txtContrasena;
 	private JButton btnLogin;
 	private JButton btnCerrar;
+	private JPasswordField txtContrasena;
 
 	/**
 	 * Launch the application.
@@ -70,11 +74,6 @@ public class Login extends JFrame implements ActionListener {
 		lblContrasena.setBounds(122, 90, 56, 14);
 		contentPane.add(lblContrasena);
 		
-		txtContrasena = new JTextField();
-		txtContrasena.setBounds(188, 87, 86, 20);
-		contentPane.add(txtContrasena);
-		txtContrasena.setColumns(10);
-		
 		btnLogin = new JButton("Login");
 		btnLogin.addActionListener(this);
 		btnLogin.setBounds(110, 141, 89, 23);
@@ -84,6 +83,10 @@ public class Login extends JFrame implements ActionListener {
 		btnCerrar.addActionListener(this);
 		btnCerrar.setBounds(225, 141, 89, 23);
 		contentPane.add(btnCerrar);
+		
+		txtContrasena = new JPasswordField();
+		txtContrasena.setBounds(188, 87, 86, 20);
+		contentPane.add(txtContrasena);
 	}
 
 	public void actionPerformed(ActionEvent e) {

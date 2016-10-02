@@ -1,0 +1,230 @@
+package gui;
+
+import java.awt.EventQueue;
+
+import javax.swing.JDialog;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.JPasswordField;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import javax.swing.UIManager;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class MantenimientoClientes extends JDialog implements ActionListener {
+	private JLabel lblCodigo;
+	private JLabel lblNombres;
+	private JLabel lblApellidoPaterno;
+	private JLabel lblApellidoMaterno;
+	private JTextField txtApePat;
+	private JTextField txtApeMat;
+	private JTextField txtNombres;
+	private JTextField txtCodigo;
+	private JTextField txtFechaNacimiento;
+	private JComboBox cboOpciones;
+	private JButton btnGrabar;
+	private JButton btnListado;
+	private JButton btnCerrar;
+	private JLabel lblDireccin;
+	private JTextField txtDireccion;
+	private JLabel lblFechaDeNacimiento;
+	private JLabel lblFechaDeAfiliacin;
+	private JTextField txtFechaAfiliacion;
+	private JLabel lblEstadoCivil;
+	private JComboBox comboBox;
+	private JLabel lblTelefono;
+	private JTextField txtTelefono;
+	private JLabel lblDni;
+	private JTextField txtDNI;
+	private JLabel lblUsuario;
+	private JTextField txtUsuario;
+	private JLabel lblContrasena;
+	private JPasswordField txtContrasena;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MantenimientoClientes dialog = new MantenimientoClientes();
+					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					dialog.setVisible(true);
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public MantenimientoClientes() {
+		setTitle("Mantenimiento - Clientes");
+		setBounds(100, 100, 450, 355);
+		getContentPane().setLayout(null);
+		
+		lblCodigo = new JLabel("Codigo");
+		lblCodigo.setBounds(10, 11, 33, 14);
+		getContentPane().add(lblCodigo);
+		
+		lblNombres = new JLabel("Nombres");
+		lblNombres.setBounds(10, 36, 42, 14);
+		getContentPane().add(lblNombres);
+		
+		lblApellidoPaterno = new JLabel("Apellido Paterno");
+		lblApellidoPaterno.setBounds(10, 61, 78, 14);
+		getContentPane().add(lblApellidoPaterno);
+		
+		lblApellidoMaterno = new JLabel("Apellido Materno");
+		lblApellidoMaterno.setBounds(10, 86, 80, 14);
+		getContentPane().add(lblApellidoMaterno);
+		
+		txtApePat = new JTextField();
+		txtApePat.setBounds(119, 58, 91, 20);
+		getContentPane().add(txtApePat);
+		txtApePat.setColumns(10);
+		
+		txtApeMat = new JTextField();
+		txtApeMat.setBounds(119, 83, 91, 20);
+		getContentPane().add(txtApeMat);
+		txtApeMat.setColumns(10);
+		
+		txtNombres = new JTextField();
+		txtNombres.setBounds(119, 33, 91, 20);
+		getContentPane().add(txtNombres);
+		txtNombres.setColumns(10);
+		
+		txtCodigo = new JTextField();
+		txtCodigo.setEditable(false);
+		txtCodigo.setBounds(119, 8, 91, 20);
+		getContentPane().add(txtCodigo);
+		txtCodigo.setColumns(10);
+		
+		txtFechaNacimiento = new JTextField();
+		txtFechaNacimiento.setBounds(119, 133, 91, 20);
+		getContentPane().add(txtFechaNacimiento);
+		txtFechaNacimiento.setColumns(10);
+		
+		cboOpciones = new JComboBox();
+		cboOpciones.setModel(new DefaultComboBoxModel(new String[] {"Ingreso", "Modificaci\u00F3n", "Eliminaci\u00F3n"}));
+		cboOpciones.setBounds(335, 8, 89, 20);
+		getContentPane().add(cboOpciones);
+		
+		btnGrabar = new JButton("Grabar");
+		btnGrabar.addActionListener(this);
+		btnGrabar.setBounds(335, 32, 89, 23);
+		getContentPane().add(btnGrabar);
+		
+		btnListado = new JButton("Listado");
+		btnListado.addActionListener(this);
+		btnListado.setBounds(335, 57, 89, 23);
+		getContentPane().add(btnListado);
+		
+		btnCerrar = new JButton("Cerrar");
+		btnCerrar.addActionListener(this);
+		btnCerrar.setBounds(335, 82, 89, 23);
+		getContentPane().add(btnCerrar);
+		
+		lblDireccin = new JLabel("Direcci\u00F3n");
+		lblDireccin.setBounds(10, 111, 43, 14);
+		getContentPane().add(lblDireccin);
+		
+		txtDireccion = new JTextField();
+		txtDireccion.setBounds(119, 108, 91, 20);
+		getContentPane().add(txtDireccion);
+		txtDireccion.setColumns(10);
+		
+		lblFechaDeNacimiento = new JLabel("Fecha de Nacimiento");
+		lblFechaDeNacimiento.setBounds(10, 136, 99, 14);
+		getContentPane().add(lblFechaDeNacimiento);
+		
+		lblFechaDeAfiliacin = new JLabel("Fecha de Afiliaci\u00F3n");
+		lblFechaDeAfiliacin.setBounds(10, 161, 89, 14);
+		getContentPane().add(lblFechaDeAfiliacin);
+		
+		txtFechaAfiliacion = new JTextField();
+		txtFechaAfiliacion.setBounds(119, 158, 91, 20);
+		getContentPane().add(txtFechaAfiliacion);
+		txtFechaAfiliacion.setColumns(10);
+		
+		lblEstadoCivil = new JLabel("Estado Civil");
+		lblEstadoCivil.setBounds(10, 186, 58, 14);
+		getContentPane().add(lblEstadoCivil);
+		
+		comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Soltero", "Casado", "Viudo", "Divorciado"}));
+		comboBox.setBounds(119, 183, 91, 20);
+		getContentPane().add(comboBox);
+		
+		lblTelefono = new JLabel("Tel\u00E9fono");
+		lblTelefono.setBounds(10, 211, 42, 14);
+		getContentPane().add(lblTelefono);
+		
+		txtTelefono = new JTextField();
+		txtTelefono.setBounds(119, 208, 91, 20);
+		getContentPane().add(txtTelefono);
+		txtTelefono.setColumns(10);
+		
+		lblDni = new JLabel("DNI");
+		lblDni.setBounds(10, 236, 18, 14);
+		getContentPane().add(lblDni);
+		
+		txtDNI = new JTextField();
+		txtDNI.setBounds(119, 233, 91, 20);
+		getContentPane().add(txtDNI);
+		txtDNI.setColumns(10);
+		
+		lblUsuario = new JLabel("Usuario");
+		lblUsuario.setBounds(10, 261, 36, 14);
+		getContentPane().add(lblUsuario);
+		
+		txtUsuario = new JTextField();
+		txtUsuario.setBounds(119, 258, 91, 20);
+		getContentPane().add(txtUsuario);
+		txtUsuario.setColumns(10);
+		
+		lblContrasena = new JLabel("Contrase\u00F1a");
+		lblContrasena.setBounds(10, 286, 56, 14);
+		getContentPane().add(lblContrasena);
+		
+		txtContrasena = new JPasswordField();
+		txtContrasena.setBounds(119, 283, 91, 20);
+		getContentPane().add(txtContrasena);
+
+	}
+	public void actionPerformed(ActionEvent arg0) {
+		if (arg0.getSource() == btnGrabar) {
+			actionPerformedBtnGrabar(arg0);
+		}
+		if (arg0.getSource() == btnListado) {
+			actionPerformedBtnListado(arg0);
+		}
+		if (arg0.getSource() == btnCerrar) {
+			actionPerformedBtnCerrar(arg0);
+		}
+	}
+	protected void actionPerformedBtnCerrar(ActionEvent arg0) {
+		dispose();
+	}
+	protected void actionPerformedBtnListado(ActionEvent arg0) {
+		ListadoClientes x = new ListadoClientes();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+	protected void actionPerformedBtnGrabar(ActionEvent arg0) {
+		String s = "¿Esta seguro de Grabar?";
+		JOptionPane.showConfirmDialog(this, s);
+	}
+}

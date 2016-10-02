@@ -1,0 +1,227 @@
+package gui;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.UIManager;
+import javax.swing.JMenuBar;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JButton;
+
+public class Menu extends JFrame implements ActionListener {
+
+	private JPanel contentPane;
+	private JMenuBar menuBar;
+	private JMenu mnMantenimiento;
+	private JMenu mnReportes;
+	private JMenuItem mntmEmpleados;
+	private JMenuItem mntmClientes;
+	private JMenuItem mntmCines;
+	private JMenuItem mntmSalas;
+	private JMenuItem mntmPeliculas;
+	private JMenuItem mntmFunciones;
+	private JButton btnRegistroDeReserva;
+	private JButton btnControlDePago;
+	private JMenuItem mntmPeliculaMasTaquillera;
+	private JMenuItem mntmListadoDeReservas;
+	private JMenuItem mntmListadoDeReservasEm;
+	private JMenuItem mntmListadoDeReservas_2;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Menu frame = new Menu();
+					frame.setVisible(true);
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Menu() {
+		setTitle("Cinematec - Men\u00FA Principal");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 450, 300);
+		
+		menuBar = new JMenuBar();
+		setJMenuBar(menuBar);
+		
+		mnMantenimiento = new JMenu("Mantenimiento");
+		menuBar.add(mnMantenimiento);
+		
+		mntmEmpleados = new JMenuItem("Empleados");
+		mntmEmpleados.addActionListener(this);
+		mnMantenimiento.add(mntmEmpleados);
+		
+		mntmClientes = new JMenuItem("Clientes");
+		mntmClientes.addActionListener(this);
+		mnMantenimiento.add(mntmClientes);
+		
+		mntmCines = new JMenuItem("Cines");
+		mntmCines.addActionListener(this);
+		mnMantenimiento.add(mntmCines);
+		
+		mntmSalas = new JMenuItem("Salas");
+		mntmSalas.addActionListener(this);
+		mnMantenimiento.add(mntmSalas);
+		
+		mntmPeliculas = new JMenuItem("Peliculas");
+		mntmPeliculas.addActionListener(this);
+		mnMantenimiento.add(mntmPeliculas);
+		
+		mntmFunciones = new JMenuItem("Funciones");
+		mntmFunciones.addActionListener(this);
+		mnMantenimiento.add(mntmFunciones);
+		
+		mnReportes = new JMenu("Reportes");
+		menuBar.add(mnReportes);
+		
+		mntmPeliculaMasTaquillera = new JMenuItem("Pel\u00EDcula taquillera");
+		mntmPeliculaMasTaquillera.addActionListener(this);
+		mnReportes.add(mntmPeliculaMasTaquillera);
+		
+		mntmListadoDeReservas = new JMenuItem("Listado de reservas");
+		mntmListadoDeReservas.addActionListener(this);
+		mnReportes.add(mntmListadoDeReservas);
+		
+		mntmListadoDeReservasEm = new JMenuItem("Listado de reservas empleado");
+		mntmListadoDeReservasEm.addActionListener(this);
+		mnReportes.add(mntmListadoDeReservasEm);
+		
+		mntmListadoDeReservas_2 = new JMenuItem("Listado de reservas cliente");
+		mntmListadoDeReservas_2.addActionListener(this);
+		mnReportes.add(mntmListadoDeReservas_2);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		btnRegistroDeReserva = new JButton("Registro de Reserva");
+		btnRegistroDeReserva.addActionListener(this);
+		btnRegistroDeReserva.setBounds(293, 11, 131, 23);
+		contentPane.add(btnRegistroDeReserva);
+		
+		btnControlDePago = new JButton("Control de Pago");
+		btnControlDePago.addActionListener(this);
+		btnControlDePago.setBounds(293, 45, 131, 23);
+		contentPane.add(btnControlDePago);
+	}
+	public void actionPerformed(ActionEvent arg0) {
+		if (arg0.getSource() == mntmListadoDeReservas_2) {
+			actionPerformedMntmListadoDeReservas_2(arg0);
+		}
+		if (arg0.getSource() == mntmListadoDeReservasEm) {
+			actionPerformedMntmListadoDeReservasEm(arg0);
+		}
+		if (arg0.getSource() == mntmListadoDeReservas) {
+			actionPerformedMntmListadoDeReservas(arg0);
+		}
+		if (arg0.getSource() == mntmPeliculaMasTaquillera) {
+			actionPerformedMntmPeliculaMasTaquillera(arg0);
+		}
+		if (arg0.getSource() == btnControlDePago) {
+			actionPerformedBtnControlDePago(arg0);
+		}
+		if (arg0.getSource() == btnRegistroDeReserva) {
+			actionPerformedBtnRegistroDeReserva(arg0);
+		}
+		if (arg0.getSource() == mntmFunciones) {
+			actionPerformedMntmFunciones(arg0);
+		}
+		if (arg0.getSource() == mntmPeliculas) {
+			actionPerformedMntmPeliculas(arg0);
+		}
+		if (arg0.getSource() == mntmSalas) {
+			actionPerformedMntmSalas(arg0);
+		}
+		if (arg0.getSource() == mntmCines) {
+			actionPerformedMntmCines(arg0);
+		}
+		if (arg0.getSource() == mntmClientes) {
+			actionPerformedMntmClientes(arg0);
+		}
+		if (arg0.getSource() == mntmEmpleados) {
+			actionPerformedMntmEmpleados(arg0);
+		}
+	}
+	protected void actionPerformedMntmEmpleados(ActionEvent arg0) {
+		MantenimientoEmpleados x = new MantenimientoEmpleados();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+	protected void actionPerformedMntmClientes(ActionEvent arg0) {
+		MantenimientoClientes x = new MantenimientoClientes();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+	protected void actionPerformedMntmCines(ActionEvent arg0) {
+		MantenimientoCines x = new MantenimientoCines();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+	protected void actionPerformedMntmSalas(ActionEvent arg0) {
+		MantenimientoSalas x = new MantenimientoSalas();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+	protected void actionPerformedMntmPeliculas(ActionEvent arg0) {
+		MantenimientoPeliculas x = new MantenimientoPeliculas();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+	protected void actionPerformedMntmFunciones(ActionEvent arg0) {
+		MantenimientoFunciones x = new MantenimientoFunciones();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+	protected void actionPerformedBtnRegistroDeReserva(ActionEvent arg0) {
+		RegistroReserva x = new RegistroReserva();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+	protected void actionPerformedBtnControlDePago(ActionEvent arg0) {
+		ControlPago x = new ControlPago();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+	protected void actionPerformedMntmPeliculaMasTaquillera(ActionEvent arg0) {
+		ReportePelicula x = new ReportePelicula();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+	protected void actionPerformedMntmListadoDeReservas(ActionEvent arg0) {
+		ReporteReservas x = new ReporteReservas();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+	protected void actionPerformedMntmListadoDeReservasEm(ActionEvent arg0) {
+		ReporteReservasEmpleado x = new ReporteReservasEmpleado();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+	protected void actionPerformedMntmListadoDeReservas_2(ActionEvent arg0) {
+		ReporteReservasCliente x = new ReporteReservasCliente();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+}

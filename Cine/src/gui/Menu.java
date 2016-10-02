@@ -1,6 +1,5 @@
 package gui;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -16,6 +15,10 @@ import javax.swing.JButton;
 
 public class Menu extends JFrame implements ActionListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JMenuBar menuBar;
 	private JMenu mnMantenimiento;
@@ -97,15 +100,19 @@ public class Menu extends JFrame implements ActionListener {
 		menuBar.add(mnReportes);
 		
 		mntmPeliculaMasTaquillera = new JMenuItem("Pel\u00EDcula taquillera");
+		mntmPeliculaMasTaquillera.addActionListener(this);
 		mnReportes.add(mntmPeliculaMasTaquillera);
 		
 		mntmListadoDeReservas = new JMenuItem("Listado de reservas");
+		mntmListadoDeReservas.addActionListener(this);
 		mnReportes.add(mntmListadoDeReservas);
 		
 		mntmListadoDeReservasEm = new JMenuItem("Listado de reservas empleado");
+		mntmListadoDeReservasEm.addActionListener(this);
 		mnReportes.add(mntmListadoDeReservasEm);
 		
 		mntmListadoDeReservas_2 = new JMenuItem("Listado de reservas cliente");
+		mntmListadoDeReservas_2.addActionListener(this);
 		mnReportes.add(mntmListadoDeReservas_2);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -123,6 +130,18 @@ public class Menu extends JFrame implements ActionListener {
 		contentPane.add(btnControlDePago);
 	}
 	public void actionPerformed(ActionEvent arg0) {
+		if (arg0.getSource() == mntmListadoDeReservas_2) {
+			actionPerformedMntmListadoDeReservas_2(arg0);
+		}
+		if (arg0.getSource() == mntmListadoDeReservasEm) {
+			actionPerformedMntmListadoDeReservasEm(arg0);
+		}
+		if (arg0.getSource() == mntmListadoDeReservas) {
+			actionPerformedMntmListadoDeReservas(arg0);
+		}
+		if (arg0.getSource() == mntmPeliculaMasTaquillera) {
+			actionPerformedMntmPeliculaMasTaquillera(arg0);
+		}
 		if (arg0.getSource() == btnControlDePago) {
 			actionPerformedBtnControlDePago(arg0);
 		}
@@ -185,6 +204,26 @@ public class Menu extends JFrame implements ActionListener {
 	}
 	protected void actionPerformedBtnControlDePago(ActionEvent arg0) {
 		ControlPago x = new ControlPago();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+	protected void actionPerformedMntmPeliculaMasTaquillera(ActionEvent arg0) {
+		ReportePelicula x = new ReportePelicula();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+	protected void actionPerformedMntmListadoDeReservas(ActionEvent arg0) {
+		ReporteReservas x = new ReporteReservas();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+	protected void actionPerformedMntmListadoDeReservasEm(ActionEvent arg0) {
+		ReporteReservasEmpleado x = new ReporteReservasEmpleado();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+	protected void actionPerformedMntmListadoDeReservas_2(ActionEvent arg0) {
+		ReporteReservasCliente x = new ReporteReservasCliente();
 		x.setLocationRelativeTo(this);
 		x.setVisible(true);
 	}

@@ -1,0 +1,251 @@
+package gui;
+
+import java.awt.EventQueue;
+
+import javax.swing.JDialog;
+import javax.swing.UIManager;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.SwingConstants;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class RegistroReserva extends JDialog implements ActionListener {
+	private JLabel lblCodigoCliente;
+	private JTextField txtCodigoCliente;
+	private JButton btnNuevoCliente;
+	private JLabel lblPelicula;
+	private JComboBox cboPelicula;
+	private JLabel lblCiudad;
+	private JComboBox cboCiudad;
+	private JLabel lblCine;
+	private JComboBox cboCine;
+	private JLabel lblFecha;
+	private JTextField txtFecha;
+	private JLabel lblHora;
+	private JTextField txtHora;
+	private JLabel lblEntradasGeneral;
+	private JTextField txtEntradasGeneral;
+	private JLabel lblButacas;
+	private JButton btnElegir;
+	private JTextField txtButacasAsientos;
+	private JButton btnCerrar;
+	private JScrollPane scrollPane;
+	private JTextArea txtS;
+	private JButton btnGenerar;
+	private JLabel lblEntradasMenores;
+	private JLabel lblEntradasMayores;
+	private JTextField txtEntradas11;
+	private JTextField txtEntradas60;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					RegistroReserva dialog = new RegistroReserva();
+					dialog.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+					dialog.setVisible(true);
+				}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the dialog.
+	 */
+	public RegistroReserva() {
+		setTitle("Resgistro de Reserva");
+		setBounds(100, 100, 495, 507);
+		getContentPane().setLayout(null);
+		
+		lblCodigoCliente = new JLabel("Codigo Cliente");
+		lblCodigoCliente.setBounds(10, 11, 69, 14);
+		getContentPane().add(lblCodigoCliente);
+		
+		txtCodigoCliente = new JTextField();
+		txtCodigoCliente.setBounds(148, 8, 122, 20);
+		getContentPane().add(txtCodigoCliente);
+		txtCodigoCliente.setColumns(10);
+		
+		btnNuevoCliente = new JButton("Nuevo Cliente");
+		btnNuevoCliente.addActionListener(this);
+		btnNuevoCliente.setBounds(370, 7, 99, 23);
+		getContentPane().add(btnNuevoCliente);
+		
+		lblPelicula = new JLabel("Pelicula");
+		lblPelicula.setBounds(10, 36, 35, 14);
+		getContentPane().add(lblPelicula);
+		
+		cboPelicula = new JComboBox();
+		cboPelicula.setModel(new DefaultComboBoxModel(new String[] {"Seleccionar"}));
+		cboPelicula.setBounds(148, 33, 122, 20);
+		getContentPane().add(cboPelicula);
+		
+		lblCiudad = new JLabel("Ciudad");
+		lblCiudad.setBounds(10, 61, 46, 14);
+		getContentPane().add(lblCiudad);
+		
+		cboCiudad = new JComboBox();
+		cboCiudad.setModel(new DefaultComboBoxModel(new String[] {"Seleccionar"}));
+		cboCiudad.setBounds(148, 58, 122, 20);
+		getContentPane().add(cboCiudad);
+		
+		lblCine = new JLabel("Cine");
+		lblCine.setBounds(10, 86, 46, 14);
+		getContentPane().add(lblCine);
+		
+		cboCine = new JComboBox();
+		cboCine.setModel(new DefaultComboBoxModel(new String[] {"Seleccionar"}));
+		cboCine.setBounds(148, 83, 122, 20);
+		getContentPane().add(cboCine);
+		
+		lblFecha = new JLabel("Fecha");
+		lblFecha.setBounds(10, 111, 46, 14);
+		getContentPane().add(lblFecha);
+		
+		txtFecha = new JTextField();
+		txtFecha.setBounds(148, 108, 122, 20);
+		getContentPane().add(txtFecha);
+		txtFecha.setColumns(10);
+		
+		lblHora = new JLabel("Hora");
+		lblHora.setBounds(10, 136, 46, 14);
+		getContentPane().add(lblHora);
+		
+		txtHora = new JTextField();
+		txtHora.setBounds(148, 133, 122, 20);
+		getContentPane().add(txtHora);
+		txtHora.setColumns(10);
+		
+		lblEntradasGeneral = new JLabel("Entradas General");
+		lblEntradasGeneral.setBounds(10, 161, 83, 14);
+		getContentPane().add(lblEntradasGeneral);
+		
+		txtEntradasGeneral = new JTextField();
+		txtEntradasGeneral.setHorizontalAlignment(SwingConstants.RIGHT);
+		txtEntradasGeneral.setText("0");
+		txtEntradasGeneral.setBounds(224, 158, 46, 20);
+		getContentPane().add(txtEntradasGeneral);
+		txtEntradasGeneral.setColumns(10);
+		
+		lblButacas = new JLabel("Butacas");
+		lblButacas.setBounds(10, 236, 46, 14);
+		getContentPane().add(lblButacas);
+		
+		btnElegir = new JButton("Asientos");
+		btnElegir.addActionListener(this);
+		btnElegir.setBounds(148, 232, 122, 23);
+		getContentPane().add(btnElegir);
+		
+		txtButacasAsientos = new JTextField();
+		txtButacasAsientos.setText("-");
+		txtButacasAsientos.setEditable(false);
+		txtButacasAsientos.setBounds(280, 233, 86, 20);
+		getContentPane().add(txtButacasAsientos);
+		txtButacasAsientos.setColumns(10);
+		
+		btnCerrar = new JButton("Cerrar");
+		btnCerrar.addActionListener(this);
+		btnCerrar.setBounds(370, 57, 99, 23);
+		getContentPane().add(btnCerrar);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 261, 459, 196);
+		getContentPane().add(scrollPane);
+		
+		txtS = new JTextArea();
+		scrollPane.setViewportView(txtS);
+		
+		btnGenerar = new JButton("Generar");
+		btnGenerar.addActionListener(this);
+		btnGenerar.setBounds(370, 32, 99, 23);
+		getContentPane().add(btnGenerar);
+		
+		lblEntradasMenores = new JLabel("Entradas Menores 11 a\u00F1os");
+		lblEntradasMenores.setBounds(10, 186, 128, 14);
+		getContentPane().add(lblEntradasMenores);
+		
+		lblEntradasMayores = new JLabel("Entradas Mayores 60 a\u00F1os");
+		lblEntradasMayores.setBounds(10, 211, 128, 14);
+		getContentPane().add(lblEntradasMayores);
+		
+		txtEntradas11 = new JTextField();
+		txtEntradas11.setHorizontalAlignment(SwingConstants.RIGHT);
+		txtEntradas11.setText("0");
+		txtEntradas11.setBounds(224, 183, 46, 20);
+		getContentPane().add(txtEntradas11);
+		txtEntradas11.setColumns(10);
+		
+		txtEntradas60 = new JTextField();
+		txtEntradas60.setHorizontalAlignment(SwingConstants.RIGHT);
+		txtEntradas60.setText("0");
+		txtEntradas60.setBounds(224, 208, 46, 20);
+		getContentPane().add(txtEntradas60);
+		txtEntradas60.setColumns(10);
+		
+	}
+
+	public void actionPerformed(ActionEvent arg0) {
+		if (arg0.getSource() == btnElegir) {
+			actionPerformedBtnElegir(arg0);
+		}
+		if (arg0.getSource() == btnNuevoCliente) {
+			actionPerformedBtnNuevoCliente(arg0);
+		}
+		if (arg0.getSource() == btnCerrar) {
+			actionPerformedBtnCerrar(arg0);
+		}
+		if (arg0.getSource() == btnGenerar) {
+			actionPerformedBtnGenerar(arg0);
+		}
+	}
+	protected void actionPerformedBtnGenerar(ActionEvent arg0) {
+		imprimir("Codigo de Reserva           : 123456");
+		imprimir("Codigo del Empleado         : 45678");
+		imprimir("Codigo de la Sala           : 88565");
+		imprimir("Codigo del Cliente          : 556432");
+		imprimir("Nombres                     : Jefrey");
+		imprimir("Apellido Paterno            : De La Torre");
+		imprimir("Apellido Materno            : Manrique");
+		imprimir("Titulo de la Pelicula       : Deadpool");
+		imprimir("Hora                        : 13:50");
+		imprimir("Fecha                       : 05/10/2016");
+		imprimir("Entradas General            : 2");
+		imprimir("Entradas Menores de 11 años : 0");
+		imprimir("Entradas Mayores de 60 años : 1");
+		imprimir("Butacas                     : D11, D12, D13");
+	}
+	
+	void imprimir(String x) {
+		txtS.append(x + "\n");
+	}
+	protected void actionPerformedBtnCerrar(ActionEvent arg0) {
+		dispose();
+	}
+	protected void actionPerformedBtnNuevoCliente(ActionEvent arg0) {
+		MantenimientoClientes x = new MantenimientoClientes();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+	protected void actionPerformedBtnElegir(ActionEvent arg0) {
+		RegistroReservaButacas x = new RegistroReservaButacas();
+		x.setLocationRelativeTo(this);
+		x.setVisible(true);
+	}
+}

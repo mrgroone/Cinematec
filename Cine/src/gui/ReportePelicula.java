@@ -13,6 +13,10 @@ import java.awt.event.ActionEvent;
 import javax.swing.UIManager;
 
 public class ReportePelicula extends JDialog implements ActionListener {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JLabel lblDe;
 	private JLabel lblHasta;
 	private JTextField txtHasta;
