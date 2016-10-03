@@ -56,16 +56,7 @@ public class ListadoClientes extends JDialog implements ActionListener {
 		
 		txtS = new JTextArea();
 		txtS.setEditable(false);
-		scrollPane.setViewportView(txtS);
-		/*
-		 * 
-		 */
-		pruebaListado();
-		
-		btnCerrar = new JButton("Cerrar");
-		btnCerrar.addActionListener(this);
-		btnCerrar.setBounds(10, 377, 334, 23);
-		getContentPane().add(btnCerrar);
+		scrollPane.setViewportView(txtS
 
 	}	
 	
@@ -89,14 +80,14 @@ public class ListadoClientes extends JDialog implements ActionListener {
 		imprimir("Nombres               : Mateo");
 		imprimir("Apellido Paterno      : Ramos");
 		imprimir("Apellido Materno      : Ramirez");
-		imprimir("Dirección             : Av. Ejercito 104");
+		imprimir("DirecciÃ³n             : Av. Ejercito 104");
 		imprimir("Fecha de Nacimiento   : 02/04/1984");
-		imprimir("Fecha de Afiliación   : 11/05/2016");
+		imprimir("Fecha de AfiliaciÃ³n   : 11/05/2016");
 		imprimir("Estado Civil          : Soltero");
-		imprimir("Teléfono              : 785 5124");
+		imprimir("TelÃ©fono              : 785 5124");
 		imprimir("DNI                   : 45278542");
 		imprimir("Usuario               : MatRamos");
-		imprimir("Contraseña            : 321654");
+		imprimir("ContraseÃ±a            : 321654");
 		
 	}
 	
